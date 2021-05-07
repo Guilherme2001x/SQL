@@ -2,8 +2,7 @@ A EQUIPE  DE MARKETING PRECISA DE FZER UMA PESQUISA SOBRE NOMES MAIS COMUNS DE S
 
 Exercicio De SELECT
 
-SELECT FirstName
+SELECT FirstName, LastName
 FROM person.person;
 
-SELECT LastName
-FROM person.person;
+
