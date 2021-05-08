@@ -1,0 +1,18 @@
+Nós usamos o operador IN junto com o WHERE, para verificar se um valor correspodem com qualquer valor passado na lista de valores.
+
+Valor IN (Valor1,Valor2)
+
+/* Abaixo Exemplo Com IN*/
+
+SELECT *
+FROM Person.person
+WHERE BusinessEntityID IN (2,7,13)
+
+/* Abaixo Exemplo Sem O IN */
+
+SELECT *
+FROM person.person
+WHERE BusinessEntityID = 2
+Or BusinessEntityID = 7
+Or BusinessEntityID = 13
+
