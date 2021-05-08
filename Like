@@ -1,0 +1,11 @@
+Vamos dizer que você quer encontrar uma pessoa no banco de dados que vc sabe que o nome dela era ovi... alguma coisa
+
+SELECT *
+FROM person.person
+WHERE FirstName like 'ovi%'
+
+% = Ele Só Entende Oq Vem Antes Dele Ou Depois Dele Por Exemplo &Ta.. , Ta& Ou &Ta&
+                                                                Fim    Começo  Meio  <<<< Significados do exemplo acima
+                                                                
+                                                                
+&Ro_ = Ele Só Vai Completar Um Carater Por Exemplo "Rog" Apenas Uma Letra
