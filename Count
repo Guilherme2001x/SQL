@@ -1,1 +1,25 @@
+/* DESAFIO 1
+eu quero saber quantos produtos temos cadastrados em nossa tabela de produtos
+(production.product)
 
+Resposta
+
+SELECT count(productID)
+FROM Production.Product
+
+Desafio 2
+eu quero saber quantos tamanhos de produtos temos cadastrado em nossa tabela
+
+Resposta
+
+select count(Size)
+FROM Production.Product
+
+Desafio 3
+eu quero saber quantos tamanhos diferentes de produtos eu tenho cadastrado em nossa tabela
+
+Resposta
+
+select count(DISTINCT Size)
+FROM Production.Product
+*/
