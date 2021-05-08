@@ -1,0 +1,23 @@
+SELECT FirstName, LastName
+FROM person.person
+ORDER BY FirstName asc ,LastName desc
+
+-- asc Crescente , desc Decrescente
+
+-- DESAFIO 1
+Obter o ProductID dos 10 produtos mais caros cadastrados no sistema, listando do mais caro para o mais barato
+
+RESPOSTA
+
+SELECT TOP 10 ProductID,ListPrice
+FROM Production.Product
+ORDER BY ListPrice desc
+
+-- DESAFIO 2
+Obter o nome e número do produto dos produtos que tem o ProductID entre 1~4
+
+RESPOSTA
+
+SELECT TOP 4 Name, ProductNumber
+FROM Production.Product
+ORDER BY ProductID asc
