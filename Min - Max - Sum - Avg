@@ -1,0 +1,10 @@
+Min - Max - Sum - Avg
+Minimo - Maximo - Soma - Média
+
+funções de agregação - basicamente agregam ou combinam dados de uma tabela em 1 resultado só
+
+SELECT TOP 10 sum(linetotal) AS "Soma" --Esse AS "Soma" Significa Como Dar Apelido Para Uma Tabela Sem Nome
+FROM Sales.SalesOrderDetail
+
+SELECT TOP 10 AVG(LineTotal)
+FROm Sales.SalesOrderDetail
