@@ -1,0 +1,34 @@
+As - Ele Basicamente Renomeia Uma Tabela
+
+--Não Precisa Utilizar Aspas Para Usar Ele Quando For Só 1 Palavra Porém Se For Nome Composto Precisa Utilizar As Aspas
+
+Exemplos 
+
+SELECT TOP 10 ListPrice as "Preço Do Produto"
+FROM Production.Product
+
+SELECT TOP 10 AVG(ListPrice) as "Preço Médio"
+FROM Production.Product
+
+DESAFIO
+
+1 - Encontrar o FirstName e LastName person.person e renomear para o português
+
+RESPOSTA
+
+SELECT FirstName as "Primeiro Nome", LastName as "Nome Do Meio"
+FROM Person.person
+
+2 - ProductNumber da tabela Production.Product
+
+RESPOSTA
+
+SELECT ProductNumber as "Número Do Produto"
+FROM Production.Product
+
+3 - Sales.SalesOrderDetail unitPrice "Preço unitário"
+
+RESPOSTA
+
+SELECT unitPrice as "Preço Unitário"
+FROM Sales.SalesOrderDetail
