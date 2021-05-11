@@ -1,0 +1,61 @@
+O having é basicamente muito usado em junção com o group by para filtrar resultados de um agrupamento.
+
+de uma forma mais simples eu gosto de entender ele como basicamente um where para dados agrupados.
+
+SELECT coluna,funcaoAgregacao(Coluna2)
+FROM nomeTabela
+GROUP BY coluna1
+HAVING condicao;
+
+A grande diferença entre HAVING e WHERE.
+é que o group by é aplicado depois que os dados já foram agrupados, enquanto o WHERE é aplicado antes dos dados serem agrupados.
+
+vamos dizer que queremos saber quais os nomes no sistema tem uma ocorrência maior que 10 vezes
+
+RESPOSTA
+
+SELECT FirstName, count(FirstName) as "quantidade"
+FROM person.person
+GROUP BY FirstName
+HAVING count(FirstName) > 10
+
+por exemplo queremos saber quais produtos que no total de vendas estão entre 162k a 500k
+
+RESPOSTA
+
+SELECT productid,sum(linetotal) as "Total"
+FROM sales.SalesOrderDetail
+GROUP BY ProductID
+HAVING SUM(linetotal) between 162000 and 500000
+
+Você quer saber quais nomes no sistema uma ocorrência maior que 10 vezes, porem somente onde o título é 'Mr.'
+
+RESPOSTA
+
+SELECT FirstName, count(FirstName) as "quantidade"
+FROM person.person
+WHERE Title = 'Mr.'
+GROUP BY FirstName
+HAVING count(FirstName) > 10 
+
+-- DESAFIO
+
+1 - Estamos querendo identificar as provicias(StateProvinceID) com o maior numero de caastros no nosso sistema, então é preciso encontrar quais provincias(StateProvinceID)
+estão registradas no banco de dados mais que 1000 vezes
+
+RESPOSTA
+
+SELECT StateProvinceID,count(StateProvinceID) as "Quantidade"
+FROM Person.Address
+GROUP BY StateProvinceID
+Having count(StateProvinceID) > 1000
+
+2 - Sendo que se trata de uma multinacional os gerentes querem saber quais produtos(productID) estão trazendo em média no mínimo 1 milhão em total de vendas(linetotal)
+
+RESPOSTA
+
+SELECT ProductID,AVG(LineTotal) As "Vendas"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+HAVING AVG(LineTotal) < 1000000
+
