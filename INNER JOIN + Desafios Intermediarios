@@ -85,5 +85,24 @@ FROM person.Address pa
 INNER JOIN person.StateProvince PS ON PS.StateProvinceID = pa.StateProvinceID
 
 
+INNER JOIN
 
+Inner join retorna apenas os resultados que correspondem(existem)taanto na tabela A como tabela B
+
+Exemplo Abaixo Sobre Inner Join
+
+A                    B
+ID NOME              ID NOME       
+
+1 ROBO                1 ESPADA
+2 MACACO              2 ROBO
+3 SAMURAI             3 MARIO
+4 MONITOR             4 SAMURAI
+
+SELECT * FROM TabelaA
+INNER JOIN TabelaB
+ON TabelaA.nome = TabelaB.nome
+
+1 - Robo - 2 Robo
+3 - Samurai - 4 Samurai
 
