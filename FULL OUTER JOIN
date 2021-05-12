@@ -1,0 +1,26 @@
+Full outer join retorna um conjunto de todos registros correspondentes da TabelaA e TabelaB quando não são iguais.
+E além disso se não houver valores correspondentes,ele simplesmente irá preencher esse lado com "null"
+
+Exemplo Abaixo Sobre Full outer join
+
+A                    B
+ID NOME              ID NOME       
+
+1 ROBO                1 ESPADA
+2 MACACO              2 ROBO
+3 SAMURAI             3 MARIO
+4 MONITOR             4 SAMURAI
+
+SELECT * FROM TabelaA
+FULL OUTER JOIN TabelaB
+ON TabelaA.nome = TabelaB.nome
+
+1 - ROBO - 2 - ROBO
+2 MACACO - NULL - NULL
+3 SAMURAI - 4 - SAMURAI
+4 MONITOR - NULL - NULL
+NULL - NULL - 1 - ESPADA
+NULL - NULL - 3 - MARIO
+
+
+
