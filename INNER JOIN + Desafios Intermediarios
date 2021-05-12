@@ -1,0 +1,89 @@
+-- Existem 3 tipos gerais de JOINS
+INNER JOIN, OUTER JOIN E SELF-JOIN
+
+SELECT C.ClienteID,C.Nome,E.Rua,E.Cidade
+FROM Cliente C
+INNER JOIN Endereco E ON E.EnderecoID = C.EnderecoID
+
+-- 2| Guilherme | Rua Norte | São Paulo
+
+Exemplo De INNER JOIN Todas As Tabelas Abaixo Faz Parte De 1 Exemplo Só
+
+Exemplo 1
+
+-- BussinesEntityID,FirstName,LastName,EmailAddress
+
+SELECT TOP 10 *
+FROM Person.person
+
+SELECT TOP 10 *
+FROM person.EmailAddress
+
+SELECT p.BusinessEntityId,p.FirstName,pe.EmailAddress
+FROM Person.Person as P
+INNER JOIN Person.EmailAddress PE on P.BusinessEntityID = pe.BusinessEntityID
+
+Exemplo 2 
+
+- Vamos dizer que nós queremos os nomes dos produtos e as informação de suas subcategorias
+--ListPrice,Nome Do Produto, Nome Da Subcategoria
+
+SELECT TOP 10 *
+FROM Production.Product
+
+SELECT TOP 10 *
+FROM Production.ProductSubcategory
+
+SELECT pr.ListPrice,pr.Name,pc.Name
+FROM Production.Product Pr
+INNER JOIN Production.ProductSubcategory PC on PC.ProductSubcategoryID = Pr.ProductSubcategoryID
+
+
+Exemplo 3
+
+-- Como Juntar Tudo Abaixo
+
+SELECT TOP 10 *
+FROM person.BusinessEntityAddress
+
+SELECT TOP 10 *
+FROM person.Address
+
+SELECT TOP 10 *
+FROM person.BusinessEntityAddress BA
+INNER JOIN Person.Address PA ON PA.AddressID = BA.AddressID
+
+ -- DESAFIO
+
+
+1- Juntando Duas Tabelas
+
+-- BusinessEntityID,Name,PhoneNumberTypeID,PhoneNumber
+
+SELECT TOP 10 *
+FROM person.PhoneNumberType
+
+SELECT TOP 10 *
+FROM Person.PersonPhone
+
+SELECT pp.BusinessEntityId,pt.name,pt.PhoneNumberTypeId,pp.PhoneNumber
+FROM person.personPhone PP
+INNER JOIN Person.PhoneNumberType PT ON PT.PhoneNumberTypeID = pp.PhoneNumberTypeID
+
+2
+
+-- quero AddressID,City,StateProvinceId,Nome Do Estado
+
+SELECT TOP 10 *
+FROM person.StateProvince
+
+SELECT TOP 10 *
+FROM person.Address
+
+SELECT TOP 10 pa.AddressID,pa.City,ps.StateProvinceID,ps.Name
+FROM person.Address pa
+INNER JOIN person.StateProvince PS ON PS.StateProvinceID = pa.StateProvinceID
+
+
+
+
