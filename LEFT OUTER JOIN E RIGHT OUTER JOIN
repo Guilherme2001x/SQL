@@ -1,0 +1,21 @@
+LEFT OUTER JOIN retorna um conjunto de todos os registros da TabelaA, e alem disso, os registros correspondentes(quando disponiveis)
+na TabelaB. Se não houver registros correspondentes ele simplesmente vai preencher com "null"
+
+A                    B
+ID NOME              ID NOME       
+
+1 ROBO                1 ESPADA
+2 MACACO              2 ROBO
+3 SAMURAI             3 MARIO
+4 MONITOR             4 SAMURAI
+
+SELECT * FROM TabelaA
+LEFT JOIN TabelaB
+ON TabelaA.nome = TabelaB.nome
+
+1 - Robo - 2 - Robo
+2 - Macaco - Null - Null
+3 - Samurai - 4 - Samurai
+4 - Monitor - Null - Null
+
+RIGHT OUTER JOIN Faz O Mesmo Que O LEFT Porém Para O Lado Direito...
